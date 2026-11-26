@@ -5,7 +5,9 @@ import { fileURLToPath } from "node:url";
 
 const MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash-lite";
 const MODULE_DIR = path.dirname(fileURLToPath(import.meta.url));
-const SKILLS_DIR = path.resolve(process.env.SKILLS_DIR || path.join(MODULE_DIR, "../../../skills"));
+const SKILLS_DIR = path.resolve(
+  process.env.SKILLS_DIR || path.join(MODULE_DIR, "../../skills")
+);
 let client;
 
 export class AIConfigurationError extends Error {

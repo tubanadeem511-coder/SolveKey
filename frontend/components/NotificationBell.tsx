@@ -88,7 +88,7 @@ export function NotificationBell() {
 
       {open && (
         <section
-          className="absolute right-0 top-12 z-[1300] max-h-[72vh] w-[min(23rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-[#122446]"
+          className="notification-panel absolute right-0 top-12 z-[1300] max-h-[72vh] w-[min(23rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-[#122446]"
           aria-label="Notifications"
         >
           <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3 dark:border-slate-800">

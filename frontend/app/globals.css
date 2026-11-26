@@ -132,7 +132,7 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: 0;
   min-height: 100vh;
   margin: 0;
   overflow-x: clip;
@@ -1021,6 +1021,17 @@ html:not(.dark) .text-slate-400 {
   .app-actions > a {
     min-width: 36px;
   }
+  .app-bottom-nav a span {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .notification-panel {
+    position: fixed;
+    top: 70px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
 }
 
 /* Refine existing map and dashboard surfaces into open civic-workspace panels */
@@ -1870,9 +1881,6 @@ html:not(.dark) .text-slate-400 {
     grid-template-columns: 1fr;
     gap: 0;
   }
-  .map-filter-select span {
-    display: none;
-  }
   .map-filter-select select {
     min-height: 34px;
   }
@@ -2400,10 +2408,112 @@ html:not(.dark) .text-slate-400 {
     gap: 4px 7px;
     padding: 7px;
   }
-  .map-legend span:nth-child(2) {
-    display: none;
+  .map-legend span {
+    font-size: 8px;
   }
   .assistant-context-stats span {
     font-size: 7px;
+  }
+}
+
+@media (max-width: 430px) {
+  .app-shell,
+  .app-stage,
+  .app-content,
+  .app-content > *,
+  .app-topbar,
+  .map-workspace,
+  .ops-workspace,
+  .report-workspace {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .app-bottom-nav {
+    box-sizing: border-box;
+    max-width: calc(100% - 20px);
+    min-width: 0;
+  }
+
+  .app-topbar {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    min-height: 62px;
+    gap: 6px;
+    padding-block: 8px;
+  }
+
+  .app-brand,
+  .app-actions,
+  .app-user,
+  .app-user-copy {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .app-actions {
+    flex-wrap: wrap;
+  }
+
+  .app-content {
+    padding-inline: 12px;
+  }
+
+  .map-workspace,
+  .ops-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .map-page-heading {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .map-page-heading > div:first-child {
+    min-width: 0;
+    flex: 1 1 12rem;
+  }
+
+  .map-heading-actions {
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .map-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .map-search,
+  .map-filter-select {
+    grid-column: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .map-filter-select span {
+    display: block;
+  }
+
+  .map-filter-select select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .map-viewport {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .map-floating-pulse {
+    width: min(162px, calc(100% - 16px));
+    max-width: calc(100% - 16px);
+  }
+
+  .map-legend {
+    max-width: calc(100% - 16px);
   }
 }
